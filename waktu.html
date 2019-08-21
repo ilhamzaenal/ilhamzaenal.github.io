@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>jam</title>
+</head>
+<body>
+<form name ="formwaktu">
+waktusekarang:
+<input type="text" name="tekswaktu" value="" size="22">
+</form>
+<script languange="javascript">
+<!--
+function aturwaktu(){
+var sekarang=new Date();
+var waktusekarang=sekarang.toLocaleString();
+document.formwaktu.tekswaktu.value=waktusekarang;
+setTimeout('aturwaktu()',1000);
+return(true);
+}
+aturwaktu();
+</script>
+</body>
+</html>
