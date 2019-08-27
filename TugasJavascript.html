@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Tugas Javascript</title>
+        <!-- Validasi JavaScript -->
+        <script language="JavaScript">
+            <!-- fungsi alphabet -->
+            function Alphabet(nilai, pesan) {
+                var alphaExp = /^[a-z-0-9]+$/;
+                if(nilai.value.match(alphaExp)) {
+                    return true;
+                }
+                else {
+                    alert(pesan);
+                    nilai.focus();
+                    return false;
+                }
+            }
+
+      		 function Pwr(nilai, pesan) {
+                var pwordExp = /^[a-zA-Z0-9]+$/;
+                if(nilai.value.match(pwordExp)) {
+                    return true;
+                }
+                else {
+                    alert(pesan);
+                    nilai.focus();
+                    return false;
+                }
+            }
+
+            <!-- fungsi number -->
+            function Number(nilai, pesan) {
+                var numberExp = /^[0-9]+$/;
+                if(nilai.value.match(numberExp)) {
+                    return true;
+                }
+                else {
+                    alert(pesan);
+                    nilai.focus();
+                    return false;
+                }
+            }
+            <!-- fungsi Email  -->
+            function cekEmail(nilai, pesan) {
+                var email = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+                if(nilai.value.match(email)) {
+                    return true;
+                }
+                else {
+                    alert(pesan);
+                    nilai.focus();
+                    return false;
+                }
+            }
+           
+            function validasi() {
+                Alphabet(document.getElementById('nama'), 'Nama hanya bisa di isi Huruf dan Angka!!');
+                Pwr(document.getElementById('pass1'), ' Password belum di isi!!');
+                Number(document.getElementById('telp'), 'Telp. hanya ber isi Number!!');
+                cekEmail(document.getElementById('email'), 'Email tidak benar!!');
+            }
+
+        </script>
+    </head>
+    <body>
+        <h2><center>FORM PENDAFTARAN ANGGOTA IMOS</center></h2>
+        <hr>
+        <form>
+            <p>Nama 	:
+    <br>
+            <input type="text" name="nama" id="nama"></p>
+            <p>Password :
+    <br>
+            <input type="password" name="pass1" id="pass1"></p>
+            <p>Jenis kelamin  : 
+    <br>
+       		<input type="radio" name="gender" id="Laki-laki"  />Laki-laki
+        	<input type="radio" name="gender" id="Perempuan"  />Perempuan</p>   
+            <p>Tanggal lahir  :
+    <br>
+			<input type="date" name="tgllahir" ></p>	
+            <p>No. Telp :
+    <br>
+            <input type="number" name="telp" id="telp"></p>
+            <p>Email 	:
+    <br>
+            <input type="email" name="email" id="email"></p>
+            <hr>
+            <p><input type="submit" onClick="validasi()" value="Daftar"></p> 
+        </form>
+    </body>
+</html> 
